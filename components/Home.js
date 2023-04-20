@@ -6,12 +6,13 @@ import Movie from './Movie';
 import 'antd/dist/antd.css';
 import styles from '../styles/Home.module.css';
 
+
 function Home() {
   const [likedMovies, setLikedMovies] = useState([]);
   const [moviesData, setMoviesData] = useState([]);
 
   useEffect(() => {
-    fetch('backend-mymoviz-k5k3koqjg-ufcmjohan-gmailcom.vercel.app')
+    fetch('https://frontend-mymoviz-blond.vercel.app/movies')
       .then(response => response.json())
       .then(data => {
         const formattedData = data.movies.map(movie => {
